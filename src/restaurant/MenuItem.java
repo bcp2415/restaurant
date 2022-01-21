@@ -3,23 +3,25 @@ package restaurant;
 import java.util.Date;
 
 public class MenuItem {
+    private String name;
     private double price;
     private String description;
     private int category;
     private boolean isNew;
 
-    public MenuItem(double price, String description, int category, Date dateAdded) {
+    public MenuItem(String name, double price, String description, int category, Date dateAdded) {
+        this.name = name;
         this.price = price;
         this.description = description;
         this.category = category;
-        this.isNew = isNew;
+        this.isNew = isItemNew();
     }
 
     public double getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
