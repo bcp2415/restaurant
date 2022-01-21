@@ -1,12 +1,14 @@
 package restaurant;
 
+import java.util.Date;
+
 public class MenuItem {
     private double price;
     private String description;
     private int category;
     private boolean isNew;
 
-    public MenuItem(double price, String description, int category, boolean isNew) {
+    public MenuItem(double price, String description, int category, Date dateAdded) {
         this.price = price;
         this.description = description;
         this.category = category;
@@ -35,5 +37,14 @@ public class MenuItem {
 
     public void setCategory(int category) {
         this.category = category;
+    }
+
+    protected boolean isItemNew() {
+        // to finish
+        return true;
+    }
+
+    protected void printItem() {
+        // to finish
     }
 }

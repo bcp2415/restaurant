@@ -26,4 +26,34 @@ public class Menu {
     public void setMenu(ArrayList menu) {
         this.menu = menu;
     }
+
+    protected void addMenuItem(MenuItem item) {
+        // to finish
+    }
+
+    protected void removeMenuItem(MenuItem item) {
+        // to finish
+    }
+
+    protected boolean isItemNew(MenuItem item) {
+        // to finish
+        return true;
+    }
+
+    //protected Date lastUpdated() {
+        // to finish
+
+    //}
+
+    protected void printItem(MenuItem item) {
+        // to finish
+    }
+
+    protected void printWholeMenu(Menu menu) {
+        // to finish
+    }
+
+    //protected boolean equals(Object ToBeCompared) {
+        // to finish
+    //}
 }
