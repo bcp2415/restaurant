@@ -1,59 +1,51 @@
 package restaurant;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Menu {
-    private Date lastUpdated;
+    private LocalDate lastUpdated;
     private ArrayList<MenuItem> menu;
 
-    public Menu(ArrayList<MenuItem> menu) {
-        this.menu = menu;
+    public Menu(LocalDate lastUpdated, ArrayList<MenuItem> items) {
+        this.lastUpdated = lastUpdated;
+        this.menu = items;
     }
 
-    public Date getLastUpdated() {
+    public LocalDate getLastUpdated() {
         return lastUpdated;
     }
 
-    public void setLastUpdated(Date lastUpdated) {
-        this.lastUpdated = lastUpdated;
+    public void setLastUpdated(String lastUpdated) {
+        this.lastUpdated = LocalDate.parse(lastUpdated);
     }
 
     public ArrayList getMenu() {
         return menu;
     }
 
-    public void setMenu(ArrayList menu) {
-        this.menu = menu;
+    public void addMenuItem(MenuItem item) {
+        menu.add(item);
+        lastUpdated = LocalDate.now();
     }
 
-    protected void addMenuItem(MenuItem item) {
-        // to finish
+    public void removeMenuItem(String name) {
+        for (int i = 0; i < menu.size(); i++) {
+            if (name.equals(menu.get(i).getName())) {
+                menu.remove(i);
+            }
+        }
+        lastUpdated = LocalDate.now();
     }
 
-    protected void removeMenuItem(MenuItem item) {
-        // to finish
+    private LocalDate lastUpdated() {
+        return lastUpdated;
     }
 
-    protected boolean isItemNew(MenuItem item) {
-        // to finish
-        return true;
+    public void printWholeMenu() {
+        for (int i = 0; i < menu.size(); i++) {
+            System.out.println(menu.get(i).toString());
+        }
+
     }
-
-    //protected Date lastUpdated() {
-        // to finish
-
-    //}
-
-    protected void printItem(MenuItem item) {
-        // to finish
-    }
-
-    protected void printWholeMenu(Menu menu) {
-        // to finish
-    }
-
-    //protected boolean equals(Object ToBeCompared) {
-        // to finish
-    //}
 }
