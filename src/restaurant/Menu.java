@@ -25,8 +25,20 @@ public class Menu {
     }
 
     public void addMenuItem(MenuItem item) {
-        menu.add(item);
-        lastUpdated = LocalDate.now();
+        boolean alreadyThere = false;
+        for (int i = 0; i < menu.size(); i++) {
+            if (item.equals(menu.get(i))) {
+                alreadyThere = true;
+            }
+        }
+        if (!alreadyThere) {
+            menu.add(item);
+            lastUpdated = LocalDate.now();
+        }
+        if (alreadyThere) {
+            System.out.println("Warning:  this item is already on the menu.  It will not be added again.");
+        }
+
     }
 
     public void removeMenuItem(String name) {

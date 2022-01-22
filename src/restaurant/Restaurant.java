@@ -17,6 +17,7 @@ public class Restaurant {
         todaysSpecials.addMenuItem(coffee);
 
         todaysSpecials.printWholeMenu();
+        todaysSpecials.addMenuItem(coffee);
 
         coffee.printItem();
 
